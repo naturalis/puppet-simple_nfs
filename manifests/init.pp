@@ -15,15 +15,10 @@ class simple_nfs (
     before => Stage['main'],
   }
 
-  file { $support_dirs :
-    ensure => directory,
-    stage  => 'pre',
-  }
-
-  file { $mount_dirs :
-    ensure  => directory,
-    require => File[$support_dirs],
-    stage   => 'pre',
+  class {'::simple_nfs::directories' :
+    stage        => 'pre',
+    support_dirs => $support_dirs,
+    mount_dirs   => $mount_dirs,
   }
 
 
