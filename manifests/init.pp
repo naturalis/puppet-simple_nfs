@@ -15,7 +15,7 @@ class simple_nfs (
     before => Stage['main'],
   }
 
-  class {'::simple_nfs::directories' :
+  class { '::simple_nfs::directories':
     stage        => 'pre',
     support_dirs => $support_dirs,
     mount_dirs   => $mount_dirs,

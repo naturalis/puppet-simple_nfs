@@ -1,10 +1,12 @@
 #
 #
 #
-class ::simple_nfs::directories(
+class simple_nfs::directories
+(
     $support_dirs,
     $mount_dirs,
 )
+
 {
 
 
